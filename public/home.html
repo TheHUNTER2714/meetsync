@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MeetSync - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+      animation: backgroundChange 20s infinite alternate;
+      background: linear-gradient(-45deg, #1e3a8a, #4f46e5, #ec4899, #10b981);
+      background-size: 400% 400%;
+    }
+
+    .shape {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(45deg, #6366f1, #8b5cf6);
+      opacity: 0.5;
+      border-radius: 50%;
+      animation: move 20s infinite ease-in-out, colorchange 10s infinite alternate;
+    }
+
+    .shape:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .shape:nth-child(2) { top: 40%; left: 70%; animation-delay: 2s; }
+    .shape:nth-child(3) { top: 60%; left: 30%; animation-delay: 4s; }
+    .shape:nth-child(4) { top: 80%; left: 50%; animation-delay: 6s; }
+    .shape:nth-child(5) { top: 10%; left: 80%; animation-delay: 8s; }
+
+    @keyframes move {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-60px) rotate(360deg); }
+    }
+
+    @keyframes colorchange {
+      0% { background: linear-gradient(45deg, #6366f1, #8b5cf6); }
+      100% { background: linear-gradient(45deg, #ec4899, #f43f5e); }
+    }
+
+    @keyframes backgroundChange {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-white">
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+
+  <div class="text-center p-10 relative z-10">
+    <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">Welcome to <span class="text-indigo-300">MeetSync</span></h1>
+    <p class="text-lg text-gray-200 mb-10">Join or host secure video meetings in seconds.</p>
+    <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+      Get Started
+    </a>
+  </div>
+</body>
+</html>
